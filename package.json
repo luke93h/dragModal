@@ -1,11 +1,16 @@
 {
-  "name": "dragmodal",
+  "name": "drag-modal",
   "version": "1.0.0",
   "description": "A dragable modal based on Modal of antd",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf ./lib && mkdir lib",
+    "lib": "npm run clean && babel src --out-dir lib"
   },
+  "files": [
+    "src",
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luke93h/dragModal.git"
@@ -17,9 +22,17 @@
     "antd"
   ],
   "author": "luke",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/luke93h/dragModal/issues"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "rimraf": "^2.6.2"
   },
   "homepage": "https://github.com/luke93h/dragModal#readme"
 }
