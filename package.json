@@ -1,0 +1,25 @@
+{
+  "name": "dragmodal",
+  "version": "1.0.0",
+  "description": "A dragable modal based on Modal of antd",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luke93h/dragModal.git"
+  },
+  "keywords": [
+    "drag",
+    "modal",
+    "react",
+    "antd"
+  ],
+  "author": "luke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luke93h/dragModal/issues"
+  },
+  "homepage": "https://github.com/luke93h/dragModal#readme"
+}
