@@ -1,5 +1,5 @@
 
-import { Modal } from 'antd'
+import Modal  from 'antd/lib/modal'
 import styles from 'antd/lib/modal/style'
 import React, { Component } from 'react';
 import DragM from './dragm'
