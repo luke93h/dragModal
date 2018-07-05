@@ -9,3 +9,4 @@ npm install drag-modal
 ```
 import Modal from 'drag-modal'
 ```
+[在sandBox上在线调试](https://codesandbox.io/s/mm1y6mqq3x)
