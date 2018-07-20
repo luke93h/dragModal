@@ -11,7 +11,7 @@ npm install drag-modal
 
 - 额外参数
 
-saveWidth: 边界限定，限定浮框超出边界后，最少需保留的宽度，默认80
+saveDistance: 边界限定，限定浮框超出边界后，最少需保留的宽度，默认80
 
 - 使用
 
@@ -48,7 +48,7 @@ class App extends React.Component {
           cancelText="关闭"
           okText="确定"
           onOk={this.onCancel}
-          saveWidth={150}
+          saveDistance={150}
         >
           试试拖动标题
         </Modal>
