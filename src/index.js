@@ -8,21 +8,25 @@ function getModalWrapperNode(dom, className){
   return pDom.classList.contains(className) ? pDom : getModalWrapperNode(pDom, className)
 }
 class BuildTitle extends React.Component{
-  updateTransform = transformStr => {
+  updateTransform = (transformStr,tx,ty) => {
+    this.checkBorder(tx, ty)
     this.modalDom.style.transform = transformStr
   };
+  checkBorder = (tx, ty) => {
+    console.log(this.modalDom, tx, ty)
+  }
   getDom = titleDom => {
     if(!titleDom) return;
     this.modalDom = getModalWrapperNode(titleDom, 'ant-modal-wrap')
   }
   render(){
-      const {title}=this.props;
-      return (<DragM 
-        updateTransform={this.updateTransform}
-        getDom={this.getDom}
-      >
-          <div>{title}</div>
-        </DragM>)
+    const {title}=this.props;
+    return (<DragM 
+      updateTransform={this.updateTransform}
+      getDom={this.getDom}
+    >
+      <div>{title}</div>
+    </DragM>)
   }
 }
 
@@ -39,7 +43,7 @@ class BuildTitle extends React.Component{
       {...props}
       title={
         <BuildTitle
-          title = {this.props.title}
+          title = {title}
         >
         </BuildTitle>
       }
