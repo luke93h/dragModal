@@ -1,18 +1,18 @@
 import React from "react";
+
+export function getModalWrapperNode(dom, className){
+  let pDom = dom.parentNode
+  return pDom.classList.contains(className) ? pDom : getModalWrapperNode(pDom, className)
+}
+
 export default class DragM extends React.Component {
-  static defaultProps = {
-    //默认是移动children dom,覆盖该方法，可以把tranform行为同步给外部
-    updateTransform: (transformStr, tx, ty, tdom) => {
-      tdom.style.transform = transformStr;
-    }
-  };
   position = {
+    initX: 0,
+    initY: 0,
     startX: 0,
     startY: 0,
     dx: 0,
     dy: 0,
-    tx: 0,
-    ty: 0
   };
   start = event => {
     if (event.button != 0) {
@@ -26,10 +26,9 @@ export default class DragM extends React.Component {
   docMove = event => {
     const tx = event.pageX - this.position.startX;
     const ty = event.pageY - this.position.startY;
-    const transformStr = `translate(${tx}px,${ty}px)`;
-    this.props.updateTransform(transformStr, tx, ty, this.tdom);
-    this.position.dx = tx;
-    this.position.dy = ty;
+    let checkedData = this.props.updateTransform( this.position, tx, ty)
+    this.position.dx = checkedData.tx;
+    this.position.dy = checkedData.ty;
   };
   docMouseUp = event => {
     document.removeEventListener("mousemove", this.docMove);
@@ -38,6 +37,9 @@ export default class DragM extends React.Component {
     this.tdom.addEventListener("mousedown", this.start);
     //用document移除对mousemove事件的监听
     document.addEventListener("mouseup", this.docMouseUp);
+    let rect =  getModalWrapperNode(this.tdom, 'ant-modal-content').getBoundingClientRect()
+    this.position.initX = rect.x
+    this.position.initY = rect.y
   }
   componentWillUnmount() {
     this.tdom.removeEventListener("mousedown", this.start);
