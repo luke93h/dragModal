@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Modal from "../../src/index";
+import './style.css'
 import "antd/dist/antd.css";
 
 class App extends React.Component {
