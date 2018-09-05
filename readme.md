@@ -15,6 +15,8 @@ saveDistance: 边界限定，限定浮框超出边界后，最少需保留的宽
 
 - 使用
 
+[在线调试](https://codesandbox.io/s/7mr6okqm26)
+
 ``` jsx
 import React from "react";
 import ReactDOM from "react-dom";
@@ -60,4 +62,3 @@ class App extends React.Component {
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
 ```
-[在sandBox上在线调试](https://codesandbox.io/s/7mr6okqm26)
