@@ -1,6 +1,6 @@
 
 import Modal  from 'antd/lib/modal'
-// import styles from 'antd/lib/modal/style'
+import 'antd/lib/modal/style/css.js'
 import React, { Component } from 'react';
 import DragM, {getModalWrapperNode} from './dragm'
 class BuildTitle extends React.Component{

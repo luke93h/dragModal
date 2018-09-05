@@ -1,6 +1,6 @@
 {
   "name": "drag-modal",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A dragable modal based on Modal of antd",
   "main": "./lib/index.js",
   "scripts": {
